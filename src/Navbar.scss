@@ -1,0 +1,10 @@
+@import './mixins';
+@import './mixins';
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  &__logoIcon {
+  }
+}

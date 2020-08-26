@@ -1,6 +1,7 @@
 import React from 'react'
 import './App.scss'
 import List from './List'
+import Home from './Home'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
 function App() {
@@ -12,7 +13,9 @@ function App() {
             <List />
           </Route>
           <Route path='/about'></Route>
-          <Route path='/' exact></Route>
+          <Route path='/' exact>
+            <Home />
+          </Route>
           <Route></Route>
         </Switch>
       </BrowserRouter>
