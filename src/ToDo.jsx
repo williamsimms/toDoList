@@ -16,9 +16,15 @@ const useStyles = makeStyles((theme) => ({
 export default function ToDo({ todo }) {
   const classes = useStyles()
   const [open, setOpen] = useState(false)
-  const [input, setInput] = useState('')
+  const [input, setInput] = useState()
 
   const updateTodo = () => {
+    database.collection('todos').doc(todo.id).set(
+      {
+        todo: input,
+      },
+      { merge: true }
+    )
     setOpen(false)
   }
   return (
@@ -26,8 +32,8 @@ export default function ToDo({ todo }) {
       <Modal open={open} onClose={(e) => setOpen(false)}>
         <div className={classes.paper}>
           <h1>Modal</h1>
-          <input type='text' value={input} onChange={(e) => setInput(e.target.value)} />
-          <Button onClick={() => setOpen(false)}>Update To Do</Button>
+          <input placeholder={todo.todo} type='text' value={input} onChange={(e) => setInput(e.target.value)} />
+          <Button onClick={updateTodo}>Update To Do</Button>
         </div>
       </Modal>
       <List className='todo'>
