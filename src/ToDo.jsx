@@ -1,6 +1,7 @@
 import React, { useState, Fragment } from 'react'
 import { List, ListItem, ListItemText, Button, Modal, makeStyles } from '@material-ui/core'
 import database from './firebase'
+import './ToDo.scss'
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -31,7 +32,7 @@ export default function ToDo({ todo }) {
     <Fragment>
       <Modal open={open} onClose={(e) => setOpen(false)}>
         <div className={classes.paper}>
-          <h1>Modal</h1>
+          <h1>Edit Your To Do</h1>
           <input placeholder={todo.todo} type='text' value={input} onChange={(e) => setInput(e.target.value)} />
           <Button onClick={updateTodo}>Update To Do</Button>
         </div>

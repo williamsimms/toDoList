@@ -3,6 +3,7 @@ import { Button, FormControl, Input, InputLabel } from '@material-ui/core'
 import ToDo from './ToDo'
 import database from './firebase'
 import firebase from 'firebase'
+import './List.scss'
 
 export default function List() {
   const [todos, setTodos] = useState([])
@@ -26,7 +27,7 @@ export default function List() {
   }
 
   return (
-    <div className='App'>
+    <div className='list'>
       <h1 className='hero-text'>To Do List</h1>
       <form>
         <FormControl>

@@ -1,0 +1,9 @@
+@import './mixins';
+@import './variables';
+
+.list {
+  text-align: center;
+  margin: auto;
+  min-height: 100vh;
+  background-color: #111;
+}
