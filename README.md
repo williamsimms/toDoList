@@ -1,4 +1,4 @@
-# To Do List (Hooks)
+# To Do List (Hooks, Firebase)
 
 ## Available Scripts
 
