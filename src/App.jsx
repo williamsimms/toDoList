@@ -13,8 +13,7 @@ function App() {
       .collection('todos')
       .orderBy('timestamp', 'desc')
       .onSnapshot((snapshot) => {
-        console.log(snapshot.docs.map((doc) => doc.data().todo))
-        setTodos(snapshot.docs.map((doc) => doc.data().todo))
+        setTodos(snapshot.docs.map((doc) => ({ id: doc.id, todo: doc.data().todo })))
       })
   }, [])
 
@@ -42,7 +41,7 @@ function App() {
 
       <ul>
         {todos.map((todo) => (
-          <ToDo text={todo} />
+          <ToDo todo={todo} />
         ))}
       </ul>
     </div>
