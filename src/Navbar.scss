@@ -12,15 +12,33 @@
     font-size: 3.5rem !important;
     cursor: pointer;
     color: $white !important;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      color: $blue !important;
+    }
   }
   &__list {
     display: flex;
     align-items: center;
     justify-content: center;
     list-style: none;
+
     & > li {
       font-size: 1.5rem;
       color: $white;
+
+      & > a {
+        color: $white;
+        text-decoration: none;
+        border-bottom: 0.2rem solid transparent;
+        padding-bottom: 0.1rem;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+          border-bottom: 0.2rem solid $blue;
+        }
+      }
     }
     & > li:first-of-type {
       margin-right: 2.5rem;

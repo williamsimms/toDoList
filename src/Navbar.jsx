@@ -8,8 +8,12 @@ export default function Navbar() {
     <nav className='navbar'>
       <ClearAllIcon className='navbar__logoIcon' />
       <ul className='navbar__list'>
-        <li>To Do List</li>
-        <li>About</li>
+        <li className='navbar__listItem'>
+          <Link to='/todo'>To Do List</Link>
+        </li>
+        <li className='navbar__listItem'>
+          <Link to='/about'>About</Link>
+        </li>
       </ul>
     </nav>
   )
