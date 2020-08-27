@@ -3,6 +3,7 @@ import './App.scss'
 import List from './List'
 import Home from './Home'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import Navbar from './Navbar'
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           </Route>
           <Route path='/about'></Route>
           <Route path='/' exact>
+            <Navbar />
             <Home />
           </Route>
           <Route></Route>

@@ -2,12 +2,8 @@
 @import './variables';
 
 .navbar {
-  padding: 2rem 4rem;
-  max-width: 90%;
-  margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  background-color: #111111;
+
   &__logoIcon {
     font-size: 3.5rem !important;
     cursor: pointer;
@@ -17,6 +13,14 @@
     &:hover {
       color: $blue !important;
     }
+  }
+  &__container {
+    padding: 2rem 4rem;
+    max-width: 90%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
   &__list {
     display: flex;
