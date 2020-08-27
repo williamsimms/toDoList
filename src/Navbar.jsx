@@ -7,7 +7,9 @@ export default function Navbar({ isToDo }) {
   return (
     <nav className='navbar'>
       <div className='navbar__container'>
-        <ClearAllIcon className='navbar__logoIcon' />
+        <Link to='/'>
+          <ClearAllIcon className='navbar__logoIcon' />
+        </Link>
         <ul className='navbar__list'>
           <li className='navbar__listItem'>
             <Link to='/todo'>To Do List</Link>

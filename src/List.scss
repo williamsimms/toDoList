@@ -6,4 +6,20 @@
   margin: auto;
   min-height: 100vh;
   background-color: #111;
+  &__formControl {
+    width: 50%;
+    color: #fff !important;
+    font-size: 1.5rem;
+    border: #fff;
+    & > input {
+      color: #fff !important;
+      border-bottom-color: #ddd !important;
+    }
+  }
+  & > h1 {
+    color: $white;
+    font-size: 7rem;
+    margin-bottom: 4rem;
+    padding-top: 3rem;
+  }
 }

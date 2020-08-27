@@ -37,13 +37,20 @@ export default function ToDo({ todo }) {
           <Button onClick={updateTodo}>Update To Do</Button>
         </div>
       </Modal>
-      <List className='todo'>
-        <ListItem>
-          <ListItemText primary='To Do' secondary={todo.todo} />
-        </ListItem>
-        <Button onClick={(e) => setOpen(true)}>Edit</Button>
-        <Button onClick={(e) => database.collection('todos').doc(todo.id).delete()}>Delete</Button>
-      </List>
+      <div className='todo'>
+        <div>
+          <h3> {todo.todo}</h3>
+        </div>
+        <Button variant='contained' className='list__button' onClick={(e) => setOpen(true)}>
+          Edit
+        </Button>
+        <Button
+          variant='contained'
+          className='list__button'
+          onClick={(e) => database.collection('todos').doc(todo.id).delete()}>
+          Delete
+        </Button>
+      </div>
     </Fragment>
   )
 }

@@ -30,11 +30,16 @@ export default function List() {
     <div className='list'>
       <h1 className='hero-text'>To Do List</h1>
       <form>
-        <FormControl>
+        <FormControl className='list__formControl'>
           <InputLabel>Add To Do</InputLabel>
-          <Input type='text' name='todo' value={input} onChange={(e) => setInput(e.target.value)}></Input>
+          <Input
+            color='secondary'
+            type='text'
+            name='todo'
+            value={input}
+            onChange={(e) => setInput(e.target.value)}></Input>
         </FormControl>
-        <Button disabled={!input} variant='contained' color='secondary' type='submit' onClick={addTodo}>
+        <Button disabled={!input} variant='contained' color='primary' type='submit' onClick={addTodo}>
           Add Todo
         </Button>
       </form>
