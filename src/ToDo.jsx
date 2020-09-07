@@ -33,6 +33,7 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 export default function ToDo({ todo }) {
+  let timeout
   const modalErrorTextRef = useRef(null)
 
   const classes = useStyles()
@@ -43,7 +44,7 @@ export default function ToDo({ todo }) {
     if (input.length < 1) {
       modalErrorTextRef.current.style.display = 'block'
 
-      setTimeout(() => {
+      timeout = setTimeout(() => {
         modalErrorTextRef.current.style.display = 'none'
       }, 3000)
     } else {
@@ -56,6 +57,11 @@ export default function ToDo({ todo }) {
       setOpen(false)
     }
   }
+
+  const onClose = () => {
+    setOpen(false)
+    clearTimeout(timeout)
+  }
   return (
     <>
       <Modal
@@ -63,7 +69,7 @@ export default function ToDo({ todo }) {
         disableEnforceFocus
         disableAutoFocus
         open={open}
-        onClose={(e) => setOpen(false)}
+        onClose={onClose}
         className='modal'
         aria-labelledby='modal'
         aria-describedby='modal'>
