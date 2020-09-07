@@ -6,20 +6,45 @@
   margin: auto;
   min-height: 100vh;
   background-color: #111;
-  &__formControl {
-    width: 50%;
-    color: #fff !important;
-    font-size: 1.5rem;
-    border: #fff;
-    & > input {
-      color: #fff !important;
-      border-bottom-color: #ddd !important;
+
+  &__errorText {
+    color: crimson;
+    font-size: 14px;
+    margin-bottom: 1.25rem;
+    display: none;
+  }
+
+  &__button {
+    font-size: 15px !important;
+    margin-bottom: 2rem;
+    text-transform: capitalize !important;
+    font-family: inherit;
+  }
+
+  & form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    & input {
+      border: none;
+      padding: 2rem 3rem;
+      font-size: 18px;
+      width: 40rem;
+      border-radius: 999px;
+      margin-bottom: 2rem;
+      font-family: inherit;
+
+      &:focus {
+        outline: none;
+      }
     }
   }
   & > h1 {
     color: $white;
     font-size: 7rem;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
     padding-top: 3rem;
   }
 }

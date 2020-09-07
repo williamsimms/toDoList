@@ -21,6 +21,19 @@
       font-size: 8rem;
       font-weight: 600;
       text-transform: uppercase;
+      text-align: center;
+
+      @include respond(phone) {
+        margin: auto;
+        text-align: center;
+        font-size: 6rem;
+      }
+
+      @include respond(small-phone) {
+        margin: auto;
+        text-align: center;
+        font-size: 4rem;
+      }
     }
 
     & > a {

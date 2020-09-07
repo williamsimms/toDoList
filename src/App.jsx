@@ -4,6 +4,7 @@ import List from './List'
 import Home from './Home'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Navbar from './Navbar'
+import About from './About'
 
 function App() {
   return (
@@ -14,7 +15,9 @@ function App() {
           <Route path='/todo'>
             <List />
           </Route>
-          <Route path='/about'></Route>
+          <Route path='/about'>
+            <About />
+          </Route>
           <Route path='/' exact>
             <Home />
           </Route>

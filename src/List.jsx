@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from 'react'
-import { Button, FormControl, Input, InputLabel } from '@material-ui/core'
+import React, { useState, useEffect, useRef } from 'react'
+import { Button } from '@material-ui/core'
 import ToDo from './ToDo'
 import database from './firebase'
 import firebase from 'firebase'
 import './List.scss'
 
 export default function List() {
+  const errorTextRef = useRef(null)
+
   const [todos, setTodos] = useState([])
   const [input, setInput] = useState('')
   useEffect(() => {
@@ -19,27 +21,36 @@ export default function List() {
 
   const addTodo = (e) => {
     e.preventDefault()
-    database.collection('todos').add({
-      todo: input,
-      timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-    })
-    setInput('')
+    if (input.length < 1) {
+      errorTextRef.current.style.display = 'block'
+
+      setTimeout(() => {
+        errorTextRef.current.style.display = 'none'
+      }, 3000)
+    } else {
+      database.collection('todos').add({
+        todo: input,
+        timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+      })
+      setInput('')
+    }
   }
 
   return (
     <div className='list'>
       <h1 className='hero-text'>To Do List</h1>
+      <p className='list__errorText' ref={errorTextRef}>
+        Please enter something before trying to add a Todo.
+      </p>
       <form>
-        <FormControl className='list__formControl'>
-          <InputLabel>Add To Do</InputLabel>
-          <Input
-            color='secondary'
-            type='text'
-            name='todo'
-            value={input}
-            onChange={(e) => setInput(e.target.value)}></Input>
-        </FormControl>
-        <Button disabled={!input} variant='contained' color='primary' type='submit' onClick={addTodo}>
+        <input
+          color='secondary'
+          type='text'
+          name='todo'
+          value={input}
+          onChange={(e) => setInput(e.target.value)}></input>
+
+        <Button className='list__button' variant='contained' type='submit' onClick={addTodo}>
           Add Todo
         </Button>
       </form>
