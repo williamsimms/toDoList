@@ -13,9 +13,10 @@
   }
   &__errorText {
     color: crimson;
-    font-size: 14px;
-    margin-bottom: 1.25rem;
+    font-size: 15px;
+    margin-bottom: 1.5rem;
     display: none;
+    font-weight: bold;
   }
 
   &__button {

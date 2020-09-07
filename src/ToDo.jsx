@@ -28,16 +28,24 @@ export default function ToDo({ todo }) {
 
   const classes = useStyles()
   const [open, setOpen] = useState(false)
-  const [input, setInput] = useState()
+  const [input, setInput] = useState('')
 
   const updateTodo = () => {
-    database.collection('todos').doc(todo.id).set(
-      {
-        todo: input,
-      },
-      { merge: true }
-    )
-    setOpen(false)
+    if (input.length < 1) {
+      modalErrorTextRef.current.style.display = 'block'
+
+      setTimeout(() => {
+        modalErrorTextRef.current.style.display = 'none'
+      }, 3000)
+    } else {
+      database.collection('todos').doc(todo.id).set(
+        {
+          todo: input,
+        },
+        { merge: true }
+      )
+      setOpen(false)
+    }
   }
   return (
     <>

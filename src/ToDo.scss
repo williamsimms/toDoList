@@ -29,6 +29,13 @@
 }
 
 .modal {
+  & p {
+    font-size: 15px;
+    margin-bottom: 1.25rem;
+    color: crimson;
+    font-weight: bold;
+    display: none;
+  }
   & h2 {
     font-size: 3rem;
     margin-bottom: 2rem;
