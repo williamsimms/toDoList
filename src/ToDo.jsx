@@ -6,11 +6,20 @@ import './ToDo.scss'
 const useStyles = makeStyles((theme) => ({
   paper: {
     position: 'absolute',
-    width: '400',
+    width: '600px',
     backgroundColor: theme.palette.background.paper,
-    border: '2px solid #000',
+    color: '#111',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'column',
     boxShadow: theme.shadows[5],
-    padding: theme.spacing(2, 4, 3),
+    padding: '4rem',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-51%,-60%)',
+    outline: '0',
+    borderRadius: '5px',
   },
 }))
 
@@ -30,9 +39,17 @@ export default function ToDo({ todo }) {
   }
   return (
     <Fragment>
-      <Modal open={open} onClose={(e) => setOpen(false)}>
+      <Modal
+        disablePortal
+        disableEnforceFocus
+        disableAutoFocus
+        open={open}
+        onClose={(e) => setOpen(false)}
+        className='modal'
+        aria-labelledby='modal'
+        aria-describedby='modal'>
         <div className={classes.paper}>
-          <h1>Edit Your To Do</h1>
+          <h2>Edit Todo</h2>
           <input placeholder={todo.todo} type='text' value={input} onChange={(e) => setInput(e.target.value)} />
           <Button onClick={updateTodo}>Update To Do</Button>
         </div>
