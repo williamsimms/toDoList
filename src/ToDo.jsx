@@ -1,5 +1,5 @@
 import React, { useState, Fragment } from 'react'
-import { List, ListItem, ListItemText, Button, Modal, makeStyles } from '@material-ui/core'
+import { Button, Modal, makeStyles } from '@material-ui/core'
 import database from './firebase'
 import './ToDo.scss'
 

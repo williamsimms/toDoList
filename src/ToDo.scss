@@ -3,11 +3,27 @@
 
 .todo {
   color: #ddd;
-  width: 40%;
+  width: 20%;
   margin: auto;
   text-align: center;
+  margin-top: 2rem;
+  background: $blue;
+  padding: 1rem;
+  border-radius: 999px;
 
-  // @include respond(phone) {
-  //   width: 100%;
-  // }
+  & h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  & button:first-of-type {
+    margin-right: 1rem;
+    transform: translateX(0.5rem);
+  }
+  & button:last-of-type {
+    transform: translateX(0.5rem);
+  }
+
+  @include respond(phone) {
+    width: 100%;
+  }
 }

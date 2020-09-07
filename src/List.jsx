@@ -19,6 +19,10 @@ export default function List() {
       })
   }, [])
 
+  useEffect(() => {
+    document.body.style.overflowY = 'scroll'
+  }, [])
+
   const addTodo = (e) => {
     e.preventDefault()
     if (input.length < 1) {
@@ -54,6 +58,7 @@ export default function List() {
           Add Todo
         </Button>
       </form>
+      <hr className='list__rule' />
 
       <ul>
         {todos.map((todo) => (

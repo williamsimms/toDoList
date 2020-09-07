@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './About.scss'
 
 export default function About() {
+  useEffect(() => {
+    document.body.style.overflowY = 'hidden'
+  }, [])
+
   return (
     <div className='about'>
       <div className='container'>

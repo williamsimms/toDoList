@@ -7,6 +7,10 @@
   min-height: 100vh;
   background-color: #111;
 
+  &__rule {
+    margin-top: 2rem;
+    opacity: 0.1;
+  }
   &__errorText {
     color: crimson;
     font-size: 14px;
