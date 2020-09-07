@@ -20,6 +20,15 @@ const useStyles = makeStyles((theme) => ({
     transform: 'translate(-51%,-60%)',
     outline: '0',
     borderRadius: '5px',
+
+    '@media (max-width:1024px)': {
+      top: '40%',
+    },
+
+    '@media (max-width:600px)': {
+      top: '45%',
+      width: '90%',
+    },
   },
 }))
 

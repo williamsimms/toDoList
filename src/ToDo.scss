@@ -11,6 +11,14 @@
   padding: 1rem;
   border-radius: 999px;
 
+  @include respond(ipad-pro) {
+    width: 50%;
+  }
+
+  @include respond(phone) {
+    width: 90%;
+  }
+
   & h3 {
     font-size: 2rem;
     margin-bottom: 1rem;
@@ -22,10 +30,6 @@
   & button:last-of-type {
     transform: translateX(0.5rem);
   }
-
-  @include respond(phone) {
-    width: 100%;
-  }
 }
 
 .modal {
@@ -35,6 +39,10 @@
     color: crimson;
     font-weight: bold;
     display: none;
+
+    @include respond(phone) {
+      font-size: 13px;
+    }
   }
   & h2 {
     font-size: 3rem;
@@ -51,6 +59,9 @@
 
     &:focus {
       outline: none;
+    }
+    @include respond(phone) {
+      width: 90%;
     }
   }
   & button {
