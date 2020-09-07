@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from 'react'
+import React, { useState, useRef } from 'react'
 import { Button, Modal, makeStyles } from '@material-ui/core'
 import database from './firebase'
 import './ToDo.scss'
@@ -24,6 +24,8 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 export default function ToDo({ todo }) {
+  const modalErrorTextRef = useRef(null)
+
   const classes = useStyles()
   const [open, setOpen] = useState(false)
   const [input, setInput] = useState()
@@ -38,7 +40,7 @@ export default function ToDo({ todo }) {
     setOpen(false)
   }
   return (
-    <Fragment>
+    <>
       <Modal
         disablePortal
         disableEnforceFocus
@@ -50,6 +52,9 @@ export default function ToDo({ todo }) {
         aria-describedby='modal'>
         <div className={classes.paper}>
           <h2>Edit Todo</h2>
+          <p className='modal__errorText' ref={modalErrorTextRef}>
+            Please enter something before trying to edit a Todo.
+          </p>
           <input placeholder={todo.todo} type='text' value={input} onChange={(e) => setInput(e.target.value)} />
           <Button onClick={updateTodo}>Update To Do</Button>
         </div>
@@ -68,6 +73,6 @@ export default function ToDo({ todo }) {
           Delete
         </Button>
       </div>
-    </Fragment>
+    </>
   )
 }

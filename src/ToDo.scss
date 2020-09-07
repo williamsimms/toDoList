@@ -34,11 +34,13 @@
     margin-bottom: 2rem;
   }
   & input {
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
     padding: 1.5rem;
     border-radius: 999px;
-    border: 1px solid #111;
+    border: 2px solid #111;
     font-size: 15px;
+    font-family: inherit;
+    width: 50%;
 
     &:focus {
       outline: none;
@@ -46,8 +48,11 @@
   }
   & button {
     background-color: #111;
-    font-size: 13px !important;
+    font-size: 13.5px !important;
     color: #fff;
     text-transform: capitalize !important;
+    &:hover {
+      background-color: darken(#111, 5) !important;
+    }
   }
 }
