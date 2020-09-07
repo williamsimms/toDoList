@@ -4,6 +4,7 @@ import './About.scss'
 export default function About() {
   useEffect(() => {
     document.body.style.overflowY = 'hidden'
+    document.documentElement.scrollTop = 0
   }, [])
 
   return (

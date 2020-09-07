@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom'
 export default function Home() {
   useEffect(() => {
     document.body.style.overflowY = 'hidden'
+    document.documentElement.scrollTop = 0
   }, [])
 
   return (
