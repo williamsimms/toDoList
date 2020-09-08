@@ -53,3 +53,9 @@
 ## Todo Page on Mobile
 
 ![image](https://github.com/williamsimms/toDoList/blob/master/readme/TodoListAppIPhone.png?raw=true)
+
+### [Live Version Of Website](https://todolist-78f6b.web.app/)
+
+#### Email - williamsimms193@gmail.com
+
+#### [Twitter](https://twitter.com/wijlum)
