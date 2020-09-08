@@ -5,6 +5,7 @@ import Home from './Home'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Navbar from './Navbar'
 import About from './About'
+import Error from './404'
 
 function App() {
   return (
@@ -21,7 +22,9 @@ function App() {
           <Route path='/' exact>
             <Home />
           </Route>
-          <Route></Route>
+          <Route>
+            <Error />
+          </Route>
         </Switch>
       </BrowserRouter>
     </div>

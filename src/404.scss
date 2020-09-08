@@ -1,0 +1,24 @@
+@import './mixins';
+@import './variables';
+
+.error {
+  min-height: 95vh;
+  background-color: #111;
+
+  & h1 {
+    text-align: center;
+    color: #fff;
+    font-size: 6rem;
+    padding-top: 5rem;
+    margin-bottom: 4rem;
+  }
+
+  &__button {
+    font-size: 15px !important;
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, -50%);
+    text-transform: capitalize !important;
+  }
+}
