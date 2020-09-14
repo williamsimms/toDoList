@@ -25,7 +25,7 @@ export default function List() {
 
   const addTodo = (e) => {
     e.preventDefault()
-    if (input.length < 1) {
+    if (input.trim().length < 1) {
       errorTextRef.current.style.display = 'block'
 
       setTimeout(() => {

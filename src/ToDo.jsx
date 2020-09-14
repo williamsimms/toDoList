@@ -41,7 +41,7 @@ export default function ToDo({ todo }) {
   const [input, setInput] = useState('')
 
   const updateTodo = () => {
-    if (input.length < 1) {
+    if (input.trim().length < 1) {
       modalErrorTextRef.current.style.display = 'block'
 
       timeout = setTimeout(() => {
